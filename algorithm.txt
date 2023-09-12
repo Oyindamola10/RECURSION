@@ -1,0 +1,64 @@
+Problem : 
+Name: Is palindrome. 
+Description: 
+Test if a word is a palindrome. A word is a palindrome if only if it can be read from 
+left to right or from right to left:gag; kayak; php; radar;....
+
+Solution:
+Function isPalindrome(word):
+    i := 0                  
+    // Initialize a pointer at the beginning of the word.
+    j := length(word) - 1 
+    // Initialize a pointer at the end of the word.
+
+    while i < j:
+        if word[i] ≠ word[j]:
+            return False    
+    // Characters at the ends are different, not a palindrome.
+        i := i + 1
+        j := j - 1
+
+    return True             
+    // All characters matched, it's a palindrome.
+
+    Breakdown of the Solution
+-Comparison of Characters: The comparison starts with two pointers or indices, 
+one at the beginning (let's call it start) and one at the end (let's call it end) of the word.
+
+-Equality Check: The characters located at the positions start and end are compared. 
+If they are equal, it indicates that they match in a palindromic fashion. In this case,  proceed to test the remaining part of the word.
+
+-Difference Check: If the characters at positions start and end are different, 
+there's no need to check the rest of the word because a single mismatch already
+ disqualifies the word from being a palindrome. Therefore, we can immediately conclude
+that the word is not a palindrome and stop further processing.
+
+-Testing the Rest of the Word: If the characters at start and end are equal, 
+increment the start pointer and decrement the end pointer to continue comparing the 
+next pair of characters from both ends. This process repeats until you either find a
+ mismatch or the start pointer crosses the end pointer.
+
+-Palindrome Check: If the loop completes without finding any mismatches (i.e., start crosses end),
+ then all characters matched, and it's a palindrome.
+
+ Stop condition:
+ Function isPalindrome(word):
+    if length(word) <= 1:
+        return True  
+    // An empty word or single character word is a palindrome.
+
+    i := 0                
+ // Initialize a pointer at the beginning of the word.
+    j := length(word) - 1 
+// Initialize a pointer at the end of the word.
+
+    while i < j:
+        if word[i] ≠ word[j]:
+            return False    
+// Characters at the ends are different, not a palindrome.
+        i := i + 1
+        j := j - 1
+
+    return True             
+// All characters matched, it's a palindrome.
+
